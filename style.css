@@ -1,0 +1,146 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.Fundo_site{
+    margin: 0;
+    height: 100vh; /* 100% da altura da viewport (tela) */
+    background-image: url("image/Telas/Fundo.jpg");
+    background-size: 100% 100%; /* Ajusta o tamanho da imagem para cobrir completamente o elemento */
+    background-position: center; /* Centraliza a imagem */
+    position: relative;
+}
+
+
+.Button_top{
+    color: rgba(240, 248, 255, 0.644);
+    position: absolute;
+    display: flex;
+    left: 100px ;
+    top: 35px;
+    transition: transform 0.3s;
+    font-size: 25px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    
+}
+.Button_top p{
+    margin-right: 80px;
+   
+}
+.Button_top p:hover {
+    cursor: pointer;
+    color: rgba(250, 250, 250, 0.952);
+    transform: scale(1.2); /* Aplica um zoom ao quadrado quando o mouse está sobre ele */
+    opacity: 1;
+}
+
+
+
+.Button_left{
+    color: rgba(240, 248, 255, 0.644);
+    position: absolute;
+    display: flex;
+    left: 1200px ;
+    top: 40px;
+    transition: transform 0.3s;
+    
+}
+.Button_left img{
+    margin-right: 60px;
+   
+}
+.Button_left img:hover {
+    cursor: pointer;
+    color: rgba(250, 250, 250, 0.952);
+    transform: scale(1.2); /* Aplica um zoom ao quadrado quando o mouse está sobre ele */
+    opacity: 1;
+}
+
+
+.lupa{
+    width: 23px;
+    height: 23px;
+    top:10px;
+    
+}
+.config{
+    width: 23px;
+    height: 23px;
+    top:10px;
+    
+}
+
+#relogio {
+    font-size: 24px;
+    font-family:Arial, Helvetica, sans-serif;
+    position: absolute;
+    margin-top: 38px;
+    left: 1450px;
+    color: rgb(255, 255, 255);}
+
+
+.conteinerQuadrado{
+    position: absolute;
+    top: 90px;
+    left: 50px;
+    display:flex;
+    
+
+}
+
+
+.quadrado{
+    
+    background-color: black;
+    width: 130px;
+    height: 130px;
+    margin-right: 10px;
+    border-radius: 10%;
+    opacity: 0.5;
+    
+    transition: transform 0.3s; /* Adiciona uma transição suave ao efeito de zoom */
+}
+
+.quadrado:hover {
+    transform: scale(1.2); /* Aplica um zoom ao quadrado quando o mouse está sobre ele */
+    opacity: 1;
+     /* Torna o quadrado totalmente visível ao passar o mouse */
+}
+
+.telaImagem {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#imagemAmpliada {
+    width:1300px;
+    height:630px;
+    left: 50px;
+    top:90px;
+    position: absolute;
+    border-radius: 2%;
+}
+
+button {
+    position: absolute;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    top:650px;
+    left: 100px;
+    padding: 100;
+    font-size: 16px;
+    font-weight: bold;
+    width: 150px;
+    height: 30px;
+    border-radius: 10%;
+
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="image/menu/Logo.ico" type="image/ico">
+    <link rel="stylesheet" href="style.css">
+    <title>Playstation</title>
+</head>
+<body>
+    <div class="Fundo_site">
+
+        <div class="Button_top"onclick="botao()">
+            <p>Games</p>
+            <p>Media</p> 
+        </div>
+        <div class="Button_left"onclick="botao()">
+            <img src="image/menu/Pesquisa.png" class="lupa">
+            <img src="image/menu/config.png" class="config">
+            <img src="image/menu/avatar.png" class="config">
+            </div>
+            <div id="relogio"></div>
+
+            <div class="conteinerQuadrado">
+                <div class="quadrado" onclick="mostrarImagem('')"></div>
+                <div class="quadrado" onclick="mostrarImagem('imagem2.jpg')"></div>
+                <div class="quadrado" onclick="mostrarImagem('imagem3.jpg')"></div>
+            </div>
+        
+            <div class="telaImagem" id="telaImagem" onclick="ocultarImagem()">
+                <div class="conteudoImagem">
+                    <img id="imagemAmpliada" src="" alt="Imagem Ampliada">
+                    <button onclick="acaoJogar()">JOGAR</button>
+                </div>
+            </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
