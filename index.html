@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="image/menu/Logo.ico" type="image/ico">
+  <title>Playstation</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #fullscreen-video {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <video id="fullscreen-video" muted autoplay >
+    <source src="video/video.mp4" type="video/mp4">
+    
+  </video>
+
+  <script>
+    window.addEventListener('load', function() {
+      var video = document.getElementById('fullscreen-video');
+      video.addEventListener('ended', function() {
+        window.location.href = 'Pagina.html';
+      });
+    });
+  </script>
+</body>
+</html>
