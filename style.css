@@ -1,5 +1,12 @@
+body {
+    background-size: cover;
+    transition: background-image 0.5s ease;
+  }
+
+
+
 .screen {
-    background-image: url("image/Fundo2.jpg");
+    background-image: url("image/Telas/Fundo3.jpg");
     background-size: cover;
     background-position: center center;
     height: 100vh;
@@ -93,7 +100,7 @@
     top: 105px;
     left: 50px;
     display: flex;
-    animation: entradaQuadrados 3s ease; /* Aplica a animação durante 3 segundos */
+    animation: entradaQuadrados 4s ease; /* Aplica a animação durante 3 segundos */
 }
 
 .quadrado {
@@ -102,14 +109,36 @@
     height: 130px;
     margin-right: 10px;
     border-radius: 10%;
-    opacity: 0.5;
-    transition: transform 0.3s, opacity 0.3s;
+    transition: transform 0.4s, opacity 0.3s;
+    transition: opacity 0.3s;
 }
 
+
 .quadrado:hover {
-    transform: scale(1.2);
+   
     opacity: 1;
+    transform: scale(1.1) translate(0px, 20px);
+    z-index: 1;
 }
+
+
+
+#meuH1 {
+    background-image: url('image/Jogos/GodofWar.png');
+}
+
+#meuH2 {
+    background-image: url('image/Jogos/EldenRing.png');
+}
+
+#meuH3 {
+    background-image: url('image/Jogos/Gta5.png');
+}
+
+.quadrado {
+    background-size: cover;
+}
+
 
 /* Area de pesquisa */
 
@@ -179,7 +208,9 @@
 /* Configuração */
 
 .configuracao {
-    background-color: rgba(37, 37, 37, 0.767);
+    background-image: url('image/menu/FundoPs5.jpg');
+    background-size: cover;
+    transition: background-image 0.5s ease;
     width: 1200px;
     height: 650px;
     border-radius: 10px;
@@ -187,7 +218,7 @@
     left: 170px;
     position: absolute;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    opacity: 0.9;
+    
     
 }
 .configuracao_overlay {
@@ -225,7 +256,7 @@
     top: 130px;
     left: 220px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: aliceblue;
+    color: rgb(255, 255, 255);
 }
 
 .config_info1 {
@@ -236,7 +267,7 @@
 
 }
 .config_info1  h1{
-    color: rgba(240, 248, 255, 0.644);
+    color: rgb(255, 255, 255);
     background-size: cover;
     background-position: center center;
     transition: transform 0.2s;
@@ -256,7 +287,7 @@
 
 .config_info1  h1:hover {
     cursor: pointer;
-    color: rgba(250, 250, 250, 0.952);
+    color: rgb(255, 255, 255);
     transform: scale(1.1);
     opacity: 1;
 }
@@ -273,7 +304,7 @@
 
 }
 .config_info2  h1{
-    color: rgba(240, 248, 255, 0.644);
+    color: rgb(255, 255, 255);
     background-size: cover;
     background-position: center center;
     transition: transform 0.2s;
@@ -368,3 +399,32 @@
     opacity: 1;
 }
 
+.botoes-jogar {
+    display: none;
+    position: absolute;
+
+    top: 670px;
+    left: 240px;
+    transform: translate(-50%, -50%);
+}
+
+.botao-jogar {
+    width: 165px;
+    height: 35px;
+    font-size: 08px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #d3d3d3; /* Cor prata */
+    color: #333; /* Cor do texto */
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.botao-jogar:hover {
+    background-color: #c0c0c0; /* Altera a cor prata no hover */
+    color: #000; /* Altera a cor do texto no hover */
+}
+.botao-jogar.botao-desativado {
+    opacity: 0; /* Por exemplo, reduz a opacidade para indicar que o botão está desativado */
+    pointer-events: none; /* Desativa os eventos do mouse para evitar cliques */
+}

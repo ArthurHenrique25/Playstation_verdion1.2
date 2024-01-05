@@ -14,18 +14,22 @@
     
     <div class="conteudo">
     <div class="menuRight">
-            <img src="image/Pesquisa.png" onclick="pesquisar()">
-            <img src="image/config.png" onclick="config()">
-            <img src="image/avatar.png">
+            <img src="image/menu/Pesquisa.png" onclick="pesquisar()">
+            <img src="image/menu/config.png" onclick="config()">
+            <img src="image/menu/avatar.png">
         </div>
     <div class="menuLeft">
-        <h1>Games</h1>
+        <h1 id="optionGames">Games</h1>
         <h1>Media</h1>
     </div>
     <div class="conteinerQuadrado">
-        <div class="quadrado"></div>
-        <div class="quadrado"></div>
-        <div class="quadrado"></div>
+        <div class="quadrado"id="meuH1"></div>
+        <div class="quadrado"id="meuH2"></div>
+        <div class="quadrado"id="meuH3"></div>
+    </div>
+    <div class="botoes-jogar">
+        <button id="botaoJogar1" class="botao-jogar" ><h1>Jogar</h1></button>
+    
     </div>
 
     <script src="app.js"></script>
@@ -33,7 +37,7 @@
     <div class="overlay" id="overlay">
         <!-- Conteúdo da tela de pesquisa -->
         <div class="screenPesquisa">
-            <iframe src="https://www.google.com.br" width="100%" height="100%" 
+            <iframe src="https://ada.tech/sou-aluno/programas/mercado-eletronico-diversedev?utm_medium=e-mail&utm_source=e-mail&utm_campaign=diversedev5" width="100%" height="100%" 
             frameborder="0" style="border:0;" allowfullscreen="" 
             aria-hidden="false" tabindex="0"></iframe>
             </div>
@@ -58,7 +62,7 @@
                 <h1>Configuração de Video</h1>
             </div>
             <div class="icone_Config">
-                <img src="image/avatar.png">
+                <img src="image/menu/avatar.png">
                 <h2>Arthur Henrique</h2>
             </div>
 
