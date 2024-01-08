@@ -600,6 +600,17 @@ th, td {
     font-size: large;
     display: none;
     border: none;
+    animation: aparecer 1s ease-out;
+}
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 .conteinerQuadrado button:hover{
     background-color: white;
@@ -616,4 +627,15 @@ th, td {
     font-size: large;
     display: none;
     border: none;
+    animation: aparecer 1s ease-out;
+}
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

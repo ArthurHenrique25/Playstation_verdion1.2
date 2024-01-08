@@ -34,8 +34,21 @@ function bloco1(){document.getElementById('meuH1').addEventListener('click', fun
   bloco3()
  
   function mostrarBotao() {
-    document.getElementById('botaoJogar').style.display = 'block';
-    document.getElementById('botaoJoga2').style.display = 'block';
+    var botao = document.getElementById('botaoJogar');
+    var botao2 = document.getElementById('botaoJoga2');
+    // Reinicia a animação removendo e adicionando a classe novamente
+    botao.classList.remove('animacao');
+    void botao.offsetWidth; // Trigger reflow
+    botao.classList.add('animacao');
+    
+    botao.style.display = 'block';
+
+
+    botao2.classList.remove('animacao');
+    void botao2.offsetWidth; // Trigger reflow
+    botao2.classList.add('animacao');
+    
+    botao2.style.display = 'block';
 }
 
 // Função para desabilitar o botão
