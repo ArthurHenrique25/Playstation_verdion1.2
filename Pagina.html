@@ -12,13 +12,25 @@
 <body>
     <div class="screen"> </div>  
     
+    
     <div class="conteudo">
     <div class="menuRight">
+       
             <img src="image/menu/Pesquisa.png" onclick="pesquisar()">
             <img src="image/menu/config.png" onclick="config()">
-            <img src="image/menu/avatar.png">
+            <div class="avatar_plus" onclick="perfil()">
+                <img src="image/menu/avatar.png"></div>
+                <div class="plus_avatar"><img src="image/Perfil/icon/plus.png" ></div>
+            
         </div>
+       
     <div class="menuLeft">
+        <table id="clockTable">
+            <tr>
+                <td id="clock" colspan="2"></td>
+            </tr>
+        </table>
+        
         <h1 id="optionGames">Games</h1>
         <h1>Media</h1>
     </div>
@@ -26,11 +38,13 @@
         <div class="quadrado"id="meuH1"></div>
         <div class="quadrado"id="meuH2"></div>
         <div class="quadrado"id="meuH3"></div>
+        <button id="botaoJogar">Jogar</button>
+        <button id="botaoJoga2">...</button>
     </div>
-    <div class="botoes-jogar">
-        <button id="botaoJogar1" class="botao-jogar" ><h1>Jogar</h1></button>
     
-    </div>
+    
+    
+   
 
     <script src="app.js"></script>
 
@@ -67,7 +81,37 @@
             </div>
 
         </div>
-     
+        <div class="perfil" id="perfil">
+            
+            
+            <div class="telaPerfil">
+                <div class="telaCobriPerfil">
+                </div>
+            </div>
+            
+                
+                <div class="quadradoPerfil">
+                    <button onclick="fecharperfil()">X</button>
+                    <div class="tabelaPerfil">
+                    <img src="image/menu/avatar.png" class="icone_Perfil">
+                    <h1>Arthur Henrique</h1>
+                    <img src="image/Perfil/icon/plus.png" class="icone_plus">
+                    </div>
+                    <div class="conectado"></div>
+                    <div class="icone_Email_image"></div>
+                    <p class="nome_Email">SadoreDestroyer  |  online</p>
+                    <p class="Language">Portugues(Brasil)</p>
+                    <div class="optionPerfil">
+                        <p class="quadradoPerfilNome">Geral</p>
+                        <p class="quadradoPerfilNome">Jogos</p>
+                        <p class="quadradoPerfilNome">Amigos</p>
+                        <p class="quadradoPerfilNome">Compartilhado</p>
+                    </div>
+                    <div id="botaoJogar"></div>
+                </div>
+                
+        </div>
+
         
     <script src="app.js">
     </script>
