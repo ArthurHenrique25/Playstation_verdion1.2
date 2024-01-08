@@ -131,3 +131,37 @@ updateClock();
 
 
 
+function optionmedia(){
+        document.getElementById('optionMedia').addEventListener('click',function() {
+            document.querySelector('.screen').style.backgroundImage = "url('image/Media/assistir.png')";
+            document.getElementById('optionMedia').addEventListener('click', desabilitarBotao);
+
+
+});}
+optionmedia()
+
+function desabilitarElementos() {
+    var elementos = document.querySelectorAll('.quadrado, #botaoJogar, #botaoJoga2');
+    elementos.forEach(function(elemento) {
+        elemento.style.display = 'none';
+    });
+}
+
+// Função para habilitar os elementos
+function habilitarElementos() {
+    var elementos = document.querySelectorAll('.quadrado, #botaoJogar, #botaoJoga2');
+    elementos.forEach(function(elemento) {
+        elemento.style.display = 'block';
+    });
+}
+
+// Adiciona o evento de clique ao botão Media
+document.getElementById('optionMedia').addEventListener('click', function () {
+    document.querySelector('.screen').style.backgroundImage = "url('image/Media/assistir.png')";
+    desabilitarElementos();
+});
+
+// Adiciona o evento de clique ao botão Games
+document.getElementById('optionGames').addEventListener('click', function () {
+    habilitarElementos();
+});
