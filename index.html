@@ -7,28 +7,67 @@
   <title>Playstation</title>
   <style>
     body {
+      background-color: black;
       margin: 0;
+      overflow: hidden;
+      transition: opacity 2s ease;
+    }
+
+    #fullscreen-video-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
       overflow: hidden;
     }
 
+    #prata-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(0, 0, 0);
+      z-index: 1;
+      opacity: 1;
+      transition: opacity 2s ease;
+    }
+
     #fullscreen-video {
-      width: 100vw;
-      height: 100vh;
+      position: absolute;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
+      z-index: 0;
+      left: 0; /* Inicialmente, o vídeo começa na posição normal (sem deslocamento) */
+      transition: left 2s ease; /* Adiciona uma transição de 2 segundos para a posição do vídeo */
     }
   </style>
 </head>
 <body>
-  <video id="fullscreen-video" muted autoplay >
-    <source src="video/video.mp4" type="video/mp4">
-    
-  </video>
+  <div id="fullscreen-video-container">
+    <div id="prata-overlay"></div>
+    <video id="fullscreen-video" muted autoplay>
+      <source src="video/video2.mp4" type="video/mp4">
+    </video>
+  </div>
 
   <script>
     window.addEventListener('load', function() {
+      var videoContainer = document.getElementById('fullscreen-video-container');
+      var prataOverlay = document.getElementById('prata-overlay');
       var video = document.getElementById('fullscreen-video');
+
+      video.addEventListener('canplaythrough', function() {
+        prataOverlay.style.opacity = '0';
+      });
+
       video.addEventListener('ended', function() {
-        window.location.href = 'Pagina.html';
+        prataOverlay.style.opacity = '0';
+        video.style.left = '-100%'; /* Move o vídeo para a esquerda gradualmente */
+
+        setTimeout(function() {
+          window.location.href = 'Pagina.html';
+        }, 100);
       });
     });
   </script>

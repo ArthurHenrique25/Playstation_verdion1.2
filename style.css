@@ -639,3 +639,150 @@ th, td {
         transform: translateY(0);
     }
 }
+
+
+#Godofwar {
+    
+    background-size: cover;
+    position: absolute;
+    left: 70px;
+    top:100px;
+    width: 200px;
+    height: 200px;
+    display: none;
+    border: none;
+    animation: aparecer 1s ease-out;
+}
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#Godofwar img{
+    background-size: cover;
+    position: absolute;
+    width: 360px;
+    height: 100px;
+    top:200px;
+    left: -20px;
+    z-index: 1;
+}
+#EldenRing {
+    
+    background-size: cover;
+    position: absolute;
+    left: 70px;
+    top:100px;
+    width: 200px;
+    height: 200px;
+    display: none;
+    border: none;
+    animation: aparecer 1s ease-out;
+}
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#EldenRing img{
+    background-size: cover;
+    position: absolute;
+    width: 360px;
+    height: 100px;
+    top:200px;
+    left: -20px;
+    z-index: 1;
+}
+#botaoJogar3 {
+    position: absolute;
+    left: 100px;
+    top:500px;
+    width: 200px;
+    height: 40px;
+    border-radius: 50px;
+    font-size: large;
+    display: none;
+    border: none;
+    animation: aparecer 1s ease-out;
+}
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.conteinerQuadrado button:hover{
+    background-color: white;
+    
+}
+#botaoJogar4 {
+    position: absolute;
+    left: 100px;
+    top:500px;
+    width: 200px;
+    height: 40px;
+    border-radius: 50px;
+    font-size: large;
+    display: none;
+    border: none;
+    animation: aparecer 1s ease-out;
+}
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.conteinerQuadrado button:hover{
+    background-color: white;
+    
+}
+#Gta {
+    
+    background-size: cover;
+    position: absolute;
+    left: 70px;
+    top:100px;
+    width: 200px;
+    height: 200px;
+    display: none;
+    border: none;
+    animation: aparecer 1s ease-out;
+}
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#Gta img{
+    background-size: cover;
+    position: absolute;
+    width: 360px;
+    height: 280px;
+    top:90px;
+    left: -5px;
+    z-index: 1;
+}

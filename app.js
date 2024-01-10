@@ -27,12 +27,58 @@ function bloco1(){document.getElementById('meuH1').addEventListener('click', fun
   bloco2()
 
   function bloco3(){document.getElementById('meuH3').addEventListener('click', function() {
-    document.querySelector('.screen').style.backgroundImage = "url('image/Telas/Fundo4.jpg')";
+    document.querySelector('.screen').style.backgroundImage = "url('image/Telas/FundoGta.jpg')";
     
   });}
   
   bloco3()
  
+
+
+
+
+  var elementosBotao1 = ['botaoJogar', 'botaoJoga2', 'Godofwar'];
+var elementosBotao2 = ['botaoJogar3', 'botaoJoga2', 'EldenRing'];
+var elementosBotao3 = ['botaoJogar4','botaoJoga2','Gta']
+var elementoAtual = null;
+
+function reiniciarAnimacao(elemento) {
+    elemento.classList.remove('animacao');
+    void elemento.offsetWidth; // Trigger reflow
+    elemento.classList.add('animacao');
+}
+
+function exibirElementosComAnimacao(elementos) {
+    if (elementoAtual) {
+        elementoAtual.forEach(function (elemento) {
+            document.getElementById(elemento).style.display = 'none';
+        });
+    }
+
+    elementos.forEach(function (elemento) {
+        var el = document.getElementById(elemento);
+        el.style.display = 'block';
+        reiniciarAnimacao(el);
+    });
+
+    elementoAtual = elementos;
+}
+
+function botaojogo1() {
+    exibirElementosComAnimacao(elementosBotao1);
+}
+
+function botaojogo2() {
+    exibirElementosComAnimacao(elementosBotao2);
+}
+
+function botaojogo3() {
+    exibirElementosComAnimacao(elementosBotao3);
+}
+
+
+
+
   function mostrarBotao() {
     var botao = document.getElementById('botaoJogar');
     var botao2 = document.getElementById('botaoJoga2');
@@ -55,17 +101,22 @@ function bloco1(){document.getElementById('meuH1').addEventListener('click', fun
 function desabilitarBotao() {
     document.getElementById('botaoJogar').style.display = 'none';
     document.getElementById('botaoJoga2').style.display = 'none';
+    document.getElementById('Godofwar').style.display = 'none';
+    document.getElementById('botaoJogar3').style.display = 'none';
+    document.getElementById('EldenRing').style.display = 'none';
+    document.getElementById('botaoJogar4').style.display = 'none';
 }
 
 // Adiciona o evento de clique a cada quadrado
 document.getElementById('meuH1').addEventListener('click', function () {
-    mostrarBotao();
+    
+    botaojogo1();
 });
 document.getElementById('meuH2').addEventListener('click', function () {
-    mostrarBotao();
+    botaojogo2();
 });
 document.getElementById('meuH3').addEventListener('click', function () {
-    mostrarBotao();
+    botaojogo3();
 });
 
 // Adiciona o evento de clique ao h1 para desabilitar o botão
@@ -82,7 +133,7 @@ document.getElementById('optionGames').addEventListener('click', desabilitarBota
 
 
 }
-adicionarBotaoJogar('meuH1', 'botaoJogar1');
+adicionarBotaoJogar('meuH1','meuH2','meuH3', 'botaoJogar1');
 
 
 let botaoJogarAtivo = true;
@@ -149,7 +200,7 @@ function desabilitarElementos() {
 
 // Função para habilitar os elementos
 function habilitarElementos() {
-    var elementos = document.querySelectorAll('.quadrado, #botaoJogar, #botaoJoga2');
+    var elementos = document.querySelectorAll('.quadrado');
     elementos.forEach(function(elemento) {
         elemento.style.display = 'block';
     });
