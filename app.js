@@ -78,25 +78,6 @@ function botaojogo3() {
 
 
 
-
-  function mostrarBotao() {
-    var botao = document.getElementById('botaoJogar');
-    var botao2 = document.getElementById('botaoJoga2');
-    // Reinicia a animação removendo e adicionando a classe novamente
-    botao.classList.remove('animacao');
-    void botao.offsetWidth; // Trigger reflow
-    botao.classList.add('animacao');
-    
-    botao.style.display = 'block';
-
-
-    botao2.classList.remove('animacao');
-    void botao2.offsetWidth; // Trigger reflow
-    botao2.classList.add('animacao');
-    
-    botao2.style.display = 'block';
-}
-
 // Função para desabilitar o botão
 function desabilitarBotao() {
     document.getElementById('botaoJogar').style.display = 'none';
@@ -105,6 +86,7 @@ function desabilitarBotao() {
     document.getElementById('botaoJogar3').style.display = 'none';
     document.getElementById('EldenRing').style.display = 'none';
     document.getElementById('botaoJogar4').style.display = 'none';
+    document.getElementById('Gta').style.display = 'none';
 }
 
 // Adiciona o evento de clique a cada quadrado
@@ -133,7 +115,7 @@ document.getElementById('optionGames').addEventListener('click', desabilitarBota
 
 
 }
-adicionarBotaoJogar('meuH1','meuH2','meuH3', 'botaoJogar1');
+adicionarBotaoJogar('meuH1','meuH2','meuH3', 'botaoJogar1','botaoJoga2');
 
 
 let botaoJogarAtivo = true;
@@ -192,7 +174,8 @@ function optionmedia(){
 optionmedia()
 
 function desabilitarElementos() {
-    var elementos = document.querySelectorAll('.quadrado, #botaoJogar, #botaoJoga2');
+    var elementos = document.querySelectorAll('.quadrado, #botaoJogar, #botaoJoga2',"#Godofwar","#botaoJogar3","#EldenRing","#botaoJogar4","#Gta");
+
     elementos.forEach(function(elemento) {
         elemento.style.display = 'none';
     });
