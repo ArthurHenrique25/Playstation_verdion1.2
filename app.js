@@ -1,3 +1,4 @@
+
 function pesquisar() {
     var overlay = document.getElementById("overlay");
     overlay.style.display = "flex";
@@ -11,24 +12,54 @@ function fecharPesquisa() {
 function config(){
     var overlay = document.getElementById("configuracao_overlay");
     overlay.style.display = "flex";
+    
 
 }
 function fecharConfig() {
     var overlay = document.getElementById("configuracao_overlay");
     overlay.style.display = "none";
 }
+
+const musicaGames = new Audio('music/sons/arquivo.mp3');
+musicaGames.loop = true;
+
+const musicaGodOfWar = new Audio("music/sons/GodOfWar.mp3");
+musicaGodOfWar.loop = true;
+
+const musicaeldenRing = new Audio("music/sons/musicbutton2.mp3");
+musicaeldenRing.loop = true;
+
+const musicagta = new Audio("music/sons/gta.mp3");
+musicagta.loop = true;
+
+const musicaneve = new Audio("music/sons/neve.mp3");
+musicaneve.loop = true;
+
+
+
 function bloco1(){document.getElementById('meuH1').addEventListener('click', function() {
     document.querySelector('.screen').style.backgroundImage = "url('image/Telas/Fundo.jpg')";
+    musicaGodOfWar.play();
+    musicaGames.pause();
+    musicaeldenRing.pause();
+    musicagta.pause();
   });}
   bloco1()
   function bloco2(){document.getElementById('meuH2').addEventListener('click', function() {
     document.querySelector('.screen').style.backgroundImage = "url('image/Telas/Fundo2.jpg')";
+    musicaeldenRing.play();
+    musicaGodOfWar.pause();
+    musicaGames.pause();
+    musicagta.pause();
   });}
   bloco2()
 
   function bloco3(){document.getElementById('meuH3').addEventListener('click', function() {
     document.querySelector('.screen').style.backgroundImage = "url('image/Telas/FundoGta.jpg')";
-    
+    musicagta.play();
+    musicaGodOfWar.pause();
+    musicaGames.pause();
+    musicaeldenRing.pause();
   });}
   
   bloco3()
@@ -37,15 +68,18 @@ function bloco1(){document.getElementById('meuH1').addEventListener('click', fun
 
 
 
-  var elementosBotao1 = ['botaoJogar', 'botaoJoga2', 'Godofwar'];
-var elementosBotao2 = ['botaoJogar3', 'botaoJoga2', 'EldenRing'];
-var elementosBotao3 = ['botaoJogar4','botaoJoga2','Gta']
-var elementoAtual = null;
+    var elementosBotao1 = ['botaoJogar', 'botaoJoga2', 'Godofwar'];
+    var elementosBotao2 = ['botaoJogar3', 'botaoJoga2_1', 'EldenRing'];
+    var elementosBotao3 = ['botaoJogar4','botaoJoga2_2','Gta']
+    var elementoAtual = null;
 
 function reiniciarAnimacao(elemento) {
     elemento.classList.remove('animacao');
-    void elemento.offsetWidth; // Trigger reflow
-    elemento.classList.add('animacao');
+    // Adiciona um pequeno atraso antes de adicionar a classe novamente
+    setTimeout(function() {
+        elemento.classList.add('animacao');
+    }, 10);
+    
 }
 
 function exibirElementosComAnimacao(elementos) {
@@ -66,6 +100,7 @@ function exibirElementosComAnimacao(elementos) {
 
 function botaojogo1() {
     exibirElementosComAnimacao(elementosBotao1);
+    
 }
 
 function botaojogo2() {
@@ -80,6 +115,10 @@ function botaojogo3() {
 
 // Função para desabilitar o botão
 function desabilitarBotao() {
+    document.getElementById('botaoJoga2_2').style.display = 'none';
+    
+    document.getElementById('botaoJoga2_2').style.display = 'none';
+    document.getElementById('botaoJoga2_1').style.display = 'none';
     document.getElementById('botaoJogar').style.display = 'none';
     document.getElementById('botaoJoga2').style.display = 'none';
     document.getElementById('Godofwar').style.display = 'none';
@@ -91,8 +130,9 @@ function desabilitarBotao() {
 
 // Adiciona o evento de clique a cada quadrado
 document.getElementById('meuH1').addEventListener('click', function () {
-    
+        
     botaojogo1();
+    
 });
 document.getElementById('meuH2').addEventListener('click', function () {
     botaojogo2();
@@ -104,18 +144,33 @@ document.getElementById('meuH3').addEventListener('click', function () {
 // Adiciona o evento de clique ao h1 para desabilitar o botão
 document.getElementById('optionGames').addEventListener('click', desabilitarBotao);
 
-  function adicionarBotaoJogar(quadradoId, botaoId) {
+function adicionarBotaoJogar(quadradoId, botaoIds) {
     var quadrado = document.getElementById(quadradoId);
-    var botaoJogar = document.getElementById(botaoId);
     
-    quadrado.addEventListener('click', function() {
-        document.querySelector('.botoes-jogar').style.display = 'block';
-        botaoJogar.style.display = 'block';
+    botaoIds.forEach(function(botaoId) {
+        var botao = document.getElementById(botaoId);
+
+        botao.addEventListener('click', function() {
+            document.querySelector('.botoes-jogar').style.display = 'block';
+            
+            // Certifique-se de que ambos os botões são exibidos
+            botaoIds.forEach(function(id) {
+                document.getElementById(id).style.display = 'block';
+            });
+
+            // Reinicia a animação para o botão clicado
+            reiniciarAnimacao(botao);
+        });
+
+        quadrado.addEventListener('click', function() {
+            // Registra o último botão clicado no quadrado
+            quadrado.ultimoBotaoClicado = botao;
+        });
     });
-
-
 }
-adicionarBotaoJogar('meuH1','meuH2','meuH3', 'botaoJogar1','botaoJoga2');
+adicionarBotaoJogar('meuH1', ['botaoJogar', 'botaoJoga2', 'Godofwar']);
+adicionarBotaoJogar('meuH2', ['botaoJogar3', 'botaoJoga2_1', 'EldenRing']);
+adicionarBotaoJogar('meuH3', ['botaoJogar4', 'botaoJoga2_2', 'Gta']);
 
 
 let botaoJogarAtivo = true;
@@ -174,7 +229,7 @@ function optionmedia(){
 optionmedia()
 
 function desabilitarElementos() {
-    var elementos = document.querySelectorAll('.quadrado, #botaoJogar, #botaoJoga2',"#Godofwar","#botaoJogar3","#EldenRing","#botaoJogar4","#Gta");
+    var elementos = document.querySelectorAll(".quadrado", "#botaoJogar", "#botaoJoga2_2","#botaoJoga2_1","#botaoJoga2","#Godofwar","#botaoJogar3","#EldenRing","#botaoJogar4","#Gta");
 
     elementos.forEach(function(elemento) {
         elemento.style.display = 'none';
@@ -193,9 +248,56 @@ function habilitarElementos() {
 document.getElementById('optionMedia').addEventListener('click', function () {
     document.querySelector('.screen').style.backgroundImage = "url('image/Media/assistir.png')";
     desabilitarElementos();
+    musicaGames.pause();
+    musicaGodOfWar.pause();
+    musicaeldenRing.pause();
+    musicagta.pause();
+    
 });
 
 // Adiciona o evento de clique ao botão Games
 document.getElementById('optionGames').addEventListener('click', function () {
     habilitarElementos();
+    musicaGames.play();
+    musicaGodOfWar.pause();
+    musicaeldenRing.pause();
+    musicagta.pause();
+    
 });
+
+ // Ouvinte de evento para alterações no controle de volume
+
+ function exibirTelaPreta() {
+    var telaPreta = document.getElementById("telaGodofWar");
+    telaPreta.style.display = "flex";
+    musicaGodOfWar.pause();
+    musicaneve.play();
+    var videoGodofWar = document.getElementById("videoGodofWar");
+    videoGodofWar.addEventListener("loadeddata", function () {
+        videoGodofWar.play();
+    });
+}
+var videoGodofWar = document.getElementById("videoGodofWar");
+
+videoGodofWar.addEventListener("loadeddata", function () {
+    console.log("Vídeo carregado com sucesso.");
+    videoGodofWar.play();
+});
+
+videoGodofWar.addEventListener("error", function (e) {
+    console.error("Erro ao carregar o vídeo:", e);
+});
+
+videoGodofWar.addEventListener("ended", function () {
+    console.log("Vídeo concluído.");
+});
+
+document.getElementById("fecharBotao").addEventListener("click", fecharTelaPreta);
+
+// Função para fechar a tela preta
+function fecharTelaPreta() {
+    musicaneve.pause();
+    var telaPreta = document.getElementById("telaGodofWar");
+    telaPreta.style.display = "none";
+    musicaGodOfWar.play();  // Retoma a música após fechar a tela preta
+}

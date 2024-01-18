@@ -10,10 +10,14 @@
     
 </head>
 <body>
+    
     <div class="screen"> </div>  
     
     <div class="conteudo">
-    
+
+
+    <!-- Tag de áudio -->
+  
     <div class="menuRight">
        
             <img src="image/menu/Pesquisa.png" onclick="pesquisar()">
@@ -23,8 +27,9 @@
                 <div class="plus_avatar"><img src="image/Perfil/icon/plus.png" ></div>
             
         </div>
-       
+        
     <div class="menuLeft">
+        <div>
         <table id="clockTable">
             <tr>
                 <td id="clock" colspan="2"></td>
@@ -32,25 +37,46 @@
         </table>
         
         <h1 id="optionGames">Games</h1>
-        <h1 id="optionMedia">Media</h1>
     </div>
-    <div class="conteinerQuadrado">
+
+        <h1 id="optionMedia">Media</h1><div>
+
+        </div>
+    </div>
+    <div class="conteinerQuadrado" id="conteinerQuadrado">
         
         <div class="quadrado"id="meuH1"></div>
         <div class="quadrado"id="meuH2"></div>
         <div class="quadrado"id="meuH3"></div>
-        <button id="botaoJogar">Jogar</button>
+        <button id="botaoJogar" onclick="exibirTelaPreta()">Jogar</button>
         <button id="botaoJogar3">Jogar</button>
         <button id="botaoJogar4">Jogar</button>
         <button id="botaoJoga2">...</button>
+        <button id="botaoJoga2_1">...</button>
+        <button id="botaoJoga2_2">...</button>
         <div id="Godofwar"><img src="image/Logo_jogos/Logo_Godofwar.png"></div>
         <div id="EldenRing"><img src="image/Logo_jogos/EldenringLogo.png"></div>
         <div id="Gta"><img src="image/Logo_jogos/GtaLogo.png"></div>
 
     </div>
-    
-    
-    
+
+
+    <div id="telaGodofWar" class="tela-GodofWar">
+        
+        
+        <video id="videoGodofWar" muted autoplay loop>
+            <source src="video/videojogo1.mp4" type="video/mp4">
+            
+        </video>
+        <div class="MenuJogo1">
+
+            <div class="botaomenujogo1">NOVO JOGO</div><br>
+            <div class="botaomenujogo1">CARREGAR JOGO</div><br>
+            <div class="botaomenujogo1">CONFIGURAÇÕES</div><br>
+            <div class="botaomenujogo1"id="fecharBotao">SAIR</div>
+        </div>
+        <div class="jogoGodofwar"><img src="image/Logo_jogos/Logo_Godofwar.png"></div>
+    </div>
    
 
     <script src="app.js"></script>
